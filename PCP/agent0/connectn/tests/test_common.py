@@ -38,6 +38,7 @@ def test_apply_player_action():
     assert ret.dtype == np.int8
     assert ret.shape == (6, 7)
     assert ret[0, 0] == 1
+    assert ret[0, 1] == 0
 
 
 def test_string_to_board():
@@ -61,10 +62,6 @@ def test_string_to_board():
 
     assert ret[0, 0] == 1
     assert ret[0, 1] == 2
-
-
-def test_connect_four():
-    from connectn.common import connect_four
 
 
 
