@@ -7,7 +7,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1aq1AOTzSW4n7pbrPDEdqiK5U3M" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -15,6 +19,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../agent0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="SvnConfiguration">
@@ -39,6 +44,10 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="72" y="185" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.760@0.0.1280.760" timestamp="1587449105058" />
+    <state x="199" y="138" key="FileChooserDialogImpl" timestamp="1588665536363">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="199" y="138" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1588665536363" />
     <state x="141" y="24" key="SettingsEditor" timestamp="1587448954559">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
