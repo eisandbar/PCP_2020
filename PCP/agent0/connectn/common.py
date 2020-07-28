@@ -63,27 +63,6 @@ def string_to_board(pp_board: str) -> np.ndarray:
                 board[i, j] = 2  # O is 2
     return board
 
-# def connect_four(
-#     board: np.ndarray, player: BoardPiece, last_action: Optional[PlayerAction] = None,
-# ) -> bool:
-#     state = False
-#     for i in range(6):
-#         if i<3:
-#             for j in range(4):
-#                 if board[i, j] == board[i + 1, j + 1] == board[i + 2, j + 2] == board[i + 3, j + 3] == player:
-#                     state = True;
-#             for j in range(7):
-#                 if board[i, j] == board[i + 1, j] == board[i + 2, j] == board[i + 3, j] == player:
-#                     state = True;
-#         elif i>=3:
-#             for j in range(4):
-#                 if board[i, j] == board[i - 1, j - 1] == board[i - 2, j - 2] == board[i - 3, j - 3] == player:
-#                     state = True;
-#         for j in range(4):
-#             if board[i, j] == board[i, j + 1] == board[i, j + 2] == board[i, j + 3] == player:
-#                 state = True;
-#     return state;
-
 from numba import njit
 
 @njit()
@@ -153,6 +132,15 @@ def check_end_state(
         return GameState.IS_DRAW
     else:
         return GameState.STILL_PLAYING
+
+def check_valid_action(
+    board: np.ndarray, action: PlayerAction,
+) -> bool:
+    """Function checks whether the action is available"""
+    if board[5, action] == 0:  # If move is possible
+        return True
+    else:
+        return False
 
 
 class SavedState:

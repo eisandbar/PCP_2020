@@ -6,7 +6,7 @@ PlayerAction = np.int8
 BoardPiece = np.int8
 
 
-def generate_move(board: np.ndarray, player: BoardPiece,
+def generate_move(board: np.ndarray, player: BoardPiece, depth: int = 4,
                   saved_state: Optional[SavedState] = None) -> (np.int8, Optional[SavedState]):
     """Function implements an alpha-beta pruning minimax search algorithm and returns the best move
 
@@ -14,7 +14,6 @@ def generate_move(board: np.ndarray, player: BoardPiece,
     If the value is larger than the current highest changes to that move and updates max_value
     Returns the best move and saved_sate
     """
-    depth = 4  # The depth of our minimax tree
     order = np.asarray([3, 2, 4, 1, 5, 0, 6])  # The order in which we check nodes
     move: PlayerAction = np.argwhere(board == 0)[0, 1]  # Default move when no moves are good
     max_value = np.NINF  # Starting value of -inf
@@ -23,7 +22,7 @@ def generate_move(board: np.ndarray, player: BoardPiece,
 
     for i in order:
         if board[5, i] == 0:  # If move is possible
-            value = alpha_beta(board.copy(), i, depth, alpha, beta, player, self=True)  # Find value
+            value = alpha_beta(board.copy(), i, depth=depth, alpha=alpha, beta=beta, player=player, self=True)  # Find value
             alpha = np.maximum(alpha, value)  # Updates alpha
             if value > max_value:  # If new highest value
                 move = i  # Update move
