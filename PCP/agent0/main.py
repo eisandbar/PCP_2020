@@ -2,9 +2,10 @@ import numpy as np
 from typing import Optional, Callable
 from connectn.common import PlayerAction, BoardPiece, SavedState, GenMove
 from connectn.agent_minimax import generate_move
+from DeepQ.agent_DQN import generate_move_DQN
 
 
-def user_move(board: np.ndarray, _player: BoardPiece, saved_state: Optional[SavedState]):
+def user_move(board: np.ndarray, _player: BoardPiece, saved_state: Optional[SavedState]=None):
     action = PlayerAction(-1)
     while not 0 <= action < board.shape[1]:
         try:
@@ -50,9 +51,7 @@ def human_vs_agent(
                 print(
                     f'{player_name} you are playing with {"X" if player == PLAYER1 else "O"}'
                 )
-                action, saved_state[player] = gen_move(
-                    board.copy(), player, saved_state[player], *args
-                )
+                action, saved_state[player] = gen_move(board.copy(), player)
                 print(f"Move time: {time.time() - t0:.3f}s")
                 apply_player_action(board, action, player)
                 turn += 1
@@ -69,5 +68,5 @@ def human_vs_agent(
                     break
 
 if __name__ == "__main__":
-    human_vs_agent(generate_move)
+    human_vs_agent(generate_move_DQN, generate_move)
     
